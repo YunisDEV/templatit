@@ -1,0 +1,25 @@
+{
+  "name": "templatit",
+  "version": "1.0.0",
+  "description": "Lightweight JS library to templating",
+  "main": "templatit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YunisDEV/templatit.git"
+  },
+  "keywords": [
+    "template",
+    "js",
+    "templating",
+    "lightweight"
+  ],
+  "author": "YunisDEV",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YunisDEV/templatit/issues"
+  },
+  "homepage": "https://github.com/YunisDEV/templatit#readme"
+}

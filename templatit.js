@@ -5,7 +5,7 @@ function templatit(selector, data = {}, templateString) {
     Object.keys(data).forEach(key => {
         tstr = tstr.replaceAll(`{${key}}`, data[key])
     })
-    return tstr
+    return tstr.trim()
 }
 
 class TemplatitBase {

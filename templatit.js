@@ -1,4 +1,4 @@
-function templatit(selector, data = {}, templateString) {
+function templatit(selector = null, data = {}, templateString) {
     var tstr = null
     if (selector) var tstr = document.querySelector(selector).innerHTML
     else var tstr = templateString
@@ -8,16 +8,20 @@ function templatit(selector, data = {}, templateString) {
     return tstr.trim()
 }
 
-class TemplatitBase {
-    constructor(tempStr = null) {
+class Templatit {
+    constructor(tempStr = null,defaultData={}) {
         if (tempStr) this.temp_str = tempStr
+        this.default_data = defaultData
     }
     template() {
-        let {temp_str=null} = this
+        let { temp_str = null } = this
         return temp_str.trim()
     }
 
-    render({ data = {}, where = null, callback = null } = {}) {
+    render({ data = null, where = null, callback = null } = {}) {
+        if(!data){
+            data = self.default_data
+        }
         var tempStr = templatit(null, data, this.template())
         if (where) {
             document.querySelector(where).innerHTML = tempStr

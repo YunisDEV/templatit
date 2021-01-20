@@ -18,14 +18,14 @@ class Templatit {
         return temp_str.trim()
     }
 
-    render({ data = null, where = null, callback = null } = {}) {
+    render({ data = null, where = null, callback = null, seperator = '' } = {}) {
         if (!data) {
             data = self.default_data
         }
         var tempStr = ''
         if (Array.isArray(data)) {
             data.forEach(value => {
-                tempStr += templatit(null, value, this.template())
+                tempStr += templatit(null, value, this.template()) + seperator
             })
         } else {
             tempStr = templatit(null, data, this.template())

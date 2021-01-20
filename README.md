@@ -77,6 +77,7 @@ template.render({
 ```
 
 You can also pass array to `data` parameter. It will render all data inside array and join them. It is useful when fetching comments, any type of list or etc.
+When using array for data, you are able to use `seperator`. Example, you can use `seperator:'\n'` or `seperator:'<br>'` for render each data in new line.
 
 ---
 

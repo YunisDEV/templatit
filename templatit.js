@@ -9,7 +9,7 @@ function templatit(selector = null, data = {}, templateString) {
 }
 
 class Templatit {
-    constructor(tempStr = null,defaultData={}) {
+    constructor(tempStr = null, defaultData = {}) {
         if (tempStr) this.temp_str = tempStr
         this.default_data = defaultData
     }
@@ -19,10 +19,17 @@ class Templatit {
     }
 
     render({ data = null, where = null, callback = null } = {}) {
-        if(!data){
+        if (!data) {
             data = self.default_data
         }
-        var tempStr = templatit(null, data, this.template())
+        var tempStr = ''
+        if (Array.isArray(data)) {
+            data.forEach(value => {
+                tempStr += templatit(null, value, this.template())
+            })
+        } else {
+            tempStr = templatit(null, data, this.template())
+        }
         if (where) {
             document.querySelector(where).innerHTML = tempStr
         }
